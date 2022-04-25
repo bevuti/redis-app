@@ -1,14 +1,14 @@
 #bin/bash
-#teste-app.sh
 RESULT="'wget -qO- http://localhost:8090'"
 wget -q localhost:8090
 if [ $? -eq 0 ]
 then
     echo 'OK - serviço no ar!'
-elif[[$RESULT == *"Number"*]]
+elif [[ $RESULT == *"Number"* ]]
 then
-    echo 'OK - serviço no ar!'
+    echo 'OK - number of visits!'
     echo $RESULT
 else
-    echo "NAO DEU"
+    echo "NOT OK - number of visits!"
     exit 1
+fi
